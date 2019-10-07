@@ -8,6 +8,17 @@ import BaseRouter from './routes';
 // Init express
 const app = express();
 
+/**
+ * Disable CORS when in development
+ */
+if (process.env.NODE_ENV === 'development') {
+    app.use((req, res, next) => {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+        next();
+    });
+}
+
 // Add middleware/settings/routes to express.
 app.use(logger('dev'));
 app.use(express.json());
@@ -23,11 +34,13 @@ app.use('/api', BaseRouter);
  * configure this to only serve the index file while in
  * production mode.
  */
-const staticDir = path.join(__dirname, '..', '..', 'ui', 'dist', 'ui');
-app.use(express.static(staticDir));
-app.get('*', (req: Request, res: Response) => {
-    res.sendFile('index.html', {root: staticDir});
-});
+if (process.env.UI_DIR) {
+    const staticDir = path.join(__dirname, process.env.UI_DIR);
+    app.use(express.static(staticDir));
+    app.get('*', (req: Request, res: Response) => {
+        res.sendFile('index.html', {root: staticDir});
+    });
+}
 
 // Export express instance
 export default app;
