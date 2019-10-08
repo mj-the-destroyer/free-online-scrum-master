@@ -2,11 +2,12 @@
   "name": "free-online-scrum-master-ui",
   "version": "0.0.0",
   "scripts": {
-    "start-dev": "npx ng serve",
-    "build": "npx ng build --prod",
-    "test": "npx ng test",
-    "lint": "npx ng lint",
-    "e2e": "npx ng e2e"
+    "postinstall": "npm i -g ng",
+    "start-dev": "ng serve",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
