@@ -20,7 +20,7 @@
     "url": "https://github.com/mj-the-destroyer/free-online-scrum-master/issues"
   },
   "homepage": "https://github.com/mj-the-destroyer/free-online-scrum-master#readme",
-  "devDependencies": {
+  "dependencies": {
     "free-online-scrum-master-ui": "./ui",
     "free-online-scrum-master-api": "./api"
   }
