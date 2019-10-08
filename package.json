@@ -5,7 +5,7 @@
   "main": "api/src/start.js",
   "scripts": {
     "build": "npm run build --prefix ./ui && npm run build --prefix ./api",
-    "start": "npm run build && npm start --prefix ./api",
+    "start": "npm start --prefix ./api",
     "start-dev": "npm run start-dev --prefix ./ui & npm run start-dev --prefix ./api"
   },
   "repository": {
