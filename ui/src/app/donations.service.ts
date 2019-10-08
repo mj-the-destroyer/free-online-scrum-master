@@ -6,12 +6,16 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
-export class PingService {
+export class DonationsService {
   constructor(
     private http: HttpClient,
   ) { }
 
-  getPing(): Observable<string> {
-    return this.http.get<string>(environment.apiUrl + '/ping');
+  getDonations(): Observable<number> {
+    return this.http.get<number>(environment.apiUrl + '/donations');
+  }
+
+  donate(): Observable<number> {
+    return this.http.post<number>(environment.apiUrl + '/donations', {});
   }
 }

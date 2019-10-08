@@ -1,1 +1,11 @@
-<div>Ping: {{ ping$ | async }}</div>
+<h1>Welcome to the Free Online Scrum Master!</h1>
+
+<p>Our objective is to promote asynchronous development with fewer and more efficient meetings.</p>
+
+<p>We seek to exercise and flesh out our asynchronous proccess throughout the SDLC of this open-source tool!</p>
+
+<button mat-raised-button color="primary" (click)="onDonatePressed()">Donate</button>
+
+<p>
+  <strong>{{ donations$ | async | currency }} rasied</strong>
+</p>

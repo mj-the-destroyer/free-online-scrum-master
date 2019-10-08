@@ -1,16 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
-import { PingService } from './ping.service';
+import { Observable } from 'rxjs';
+
+import { DonationsService } from './donations.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  public ping$ = this.pingService.getPing();
+  public donations$: Observable<number> = this.donationsService.getDonations();
 
   constructor(
-    private pingService: PingService,
+    private donationsService: DonationsService,
   ) { }
+
+  public onDonatePressed() {
+    this.donations$ = this.donationsService.donate();
+  }
 }

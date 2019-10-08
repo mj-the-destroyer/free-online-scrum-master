@@ -1,13 +1,14 @@
 import { Router } from 'express';
+
 import UserRouter from './Users';
-import PingRouter from './Ping';
+import DonationsRouter from './Donations';
 
 // Init router and path
 const router = Router();
 
 // Add sub-routes
 router.use('/users', UserRouter);
-router.use('/ping', PingRouter);
+router.use('/donations', DonationsRouter);
 
 // Export the base-router
 export default router;
