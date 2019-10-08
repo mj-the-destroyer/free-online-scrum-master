@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/mj-the-destroyer/free-online-scrum-master#readme",
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.803.3",
     "@angular/cli": "~8.3.3"
   }
 }
