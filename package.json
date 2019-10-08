@@ -2,10 +2,9 @@
   "name": "free-online-scrum-master",
   "version": "1.0.0",
   "description": "Our objective is to promote asynchronous development with fewer and more efficient meetings.",
-  "main": "api/src/start.js",
   "scripts": {
     "install": "(cd api && npm i) && (cd ui && npm i)",
-    "build": "(cd api && npm run build) && (cd ui && npm run build)",
+    "build": "(cd ui && npm run build) && (cd api && npm run build)",
     "start": "(cd api && npm start)",
     "start-dev": "npm run start-dev --prefix ui & npm run start-dev --prefix api"
   },
@@ -19,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/mj-the-destroyer/free-online-scrum-master/issues"
   },
-  "homepage": "https://github.com/mj-the-destroyer/free-online-scrum-master#readme"
+  "homepage": "https://github.com/mj-the-destroyer/free-online-scrum-master#readme",
+  "devDependencies": {
+
+  }
 }
