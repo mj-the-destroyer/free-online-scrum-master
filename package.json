@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Our objective is to promote asynchronous development with fewer and more efficient meetings.",
   "scripts": {
+    "lint": "tslint ui/src/**/*.ts api/src/**/*.ts",
     "build": "npm run --prefix ui build && npm run --prefix api build",
     "start": "npm run --prefix api start",
     "start-dev": "npm run --prefix ui start-dev & npm run --prefix api start-dev"
@@ -19,7 +20,12 @@
   },
   "homepage": "https://github.com/mj-the-destroyer/free-online-scrum-master#readme",
   "dependencies": {
-    "free-online-scrum-master-ui": "./ui",
-    "free-online-scrum-master-api": "./api"
+    "free-online-scrum-master-api": "./api",
+    "free-online-scrum-master-ui": "./ui"
+  },
+  "devDependencies": {
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.6.3"
   }
 }
