@@ -5,8 +5,8 @@
   "scripts": {
     "lint": "tslint ui/src/**/*.ts ui/src/*.ts api/src/**/*.ts api/src/*.ts",
     "test": "npm run --prefix ui test-once && npm run --prefix api test-once",
-    "build": "npm run --prefix ui build && npm run --prefix api build",
-    "start": "npm run build && npm run --prefix api start",
+    "build": "npm run --prefix api build && npm run --prefix ui build",
+    "start": "npm run --prefix api start",
     "start-dev": "npm run --prefix ui start-dev & npm run --prefix api start-dev"
   },
   "repository": {
