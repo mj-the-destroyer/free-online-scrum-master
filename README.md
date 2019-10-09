@@ -20,4 +20,3 @@ After changes have been merged into `master` branch:
 3) `git push heroku master`
 
 (Only Wil can deploy to production b/c we are using his heroku account)
-
