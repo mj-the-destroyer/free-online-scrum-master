@@ -6,13 +6,8 @@
     "lint": "tslint --project \"tsconfig.json\"",
     "start": "cross-env ENV_FILE=production node -r ./env -r module-alias/register ./dist/start.js",
     "start-dev": "nodemon --config \"./util/nodemon.json\"",
-    "test": "nodemon --config \"./util/nodemon.test.json\""
-  },
-  "_moduleAliases": {
-    "@daos": "dist/daos",
-    "@entities": "dist/entities",
-    "@shared": "dist/shared",
-    "@server": "dist/Server"
+    "test": "nodemon --config \"./util/nodemon.test.json\"",
+    "test-once": "cross-env ENV_FILE=test ts-node -r ./env -r tsconfig-paths/register ./spec/start.ts"
   },
   "dependencies": {
     "cookie-parser": "^1.4.4",
@@ -44,7 +39,6 @@
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.6.3"
   },
-  "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",

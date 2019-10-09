@@ -4,6 +4,11 @@
     "tslint-config-prettier"
   ],
   "rules": {
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "no-implicit-dependencies": false,
+    "no-duplicate-imports": false,
+    "no-submodule-imports": false,
+    "ordered-imports": false,
+    "no-console": false
   }
 }

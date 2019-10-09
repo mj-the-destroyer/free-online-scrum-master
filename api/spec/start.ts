@@ -1,5 +1,6 @@
 import find from 'find';
 import Jasmine from 'jasmine';
+
 import { logger } from '@shared';
 
 // Init Jasmine
@@ -19,8 +20,10 @@ jasmine.loadConfig({
 jasmine.onComplete((passed: boolean) => {
     if (passed) {
         logger.info('All tests have passed :)');
+        process.exit(0);
     } else {
         logger.error('At least one test has failed :(');
+        process.exit(1);
     }
 });
 
@@ -39,3 +42,10 @@ if (process.argv[2]) {
     jasmine.execute();
 }
 
+export const shutdown = (signal: string) => () => {
+    process.kill(process.pid, signal);
+};
+
+const shutdownSignals: NodeJS.Signals[] = ['SIGTERM', 'SIGINT', 'SIGUSR2'];
+
+shutdownSignals.forEach(signal => process.once(signal, shutdown(signal)));

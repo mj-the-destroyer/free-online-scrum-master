@@ -11,11 +11,11 @@ export class DonationsService {
     private http: HttpClient,
   ) { }
 
-  getDonations(): Observable<number> {
+  public getDonations(): Observable<number> {
     return this.http.get<number>(environment.apiUrl + '/donations');
   }
 
-  donate(): Observable<number> {
+  public donate(): Observable<number> {
     return this.http.post<number>(environment.apiUrl + '/donations', {});
   }
 }
