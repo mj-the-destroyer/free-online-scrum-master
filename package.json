@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Our objective is to promote asynchronous development with fewer and more efficient meetings.",
   "scripts": {
-    "lint": "tslint ui/src/**/*.ts api/src/**/*.ts",
+    "lint": "tslint ui/src/**/*.ts ui/src/*.ts api/src/**/*.ts api/src/*.ts",
     "build": "npm run --prefix ui build && npm run --prefix api build",
     "start": "npm run --prefix api start",
     "start-dev": "npm run --prefix ui start-dev & npm run --prefix api start-dev"
