@@ -4,7 +4,7 @@ import { Request, Response } from 'express';
 import logger from 'morgan';
 import path from 'path';
 
-import BaseRouter from './routes';
+import BaseRouter from '@routes';
 
 const app = express();
 

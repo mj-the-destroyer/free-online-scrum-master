@@ -13,17 +13,14 @@
     "target": "es6",
     "moduleResolution": "node",
     "paths": {
-      "@daos": [
-        "src/daos"
+      "@app": [
+        "src/app"
       ],
-      "@entities": [
-        "src/entities"
+      "@routes": [
+        "src/routes"
       ],
       "@shared": [
         "src/shared"
-      ],
-      "@server": [
-        "src/Server"
       ]
     },
     "types": [

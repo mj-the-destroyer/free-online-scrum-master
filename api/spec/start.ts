@@ -9,7 +9,7 @@ const jasmine = new Jasmine(null);
 // Set location of test files
 jasmine.loadConfig({
     random: true,
-    spec_dir: 'spec',
+    spec_dir: 'src',
     spec_files: [
         './**/*.spec.ts',
     ],
@@ -42,6 +42,7 @@ if (process.argv[2]) {
     jasmine.execute();
 }
 
+// Kill process on exit
 export const shutdown = (signal: string) => () => {
     process.kill(process.pid, signal);
 };

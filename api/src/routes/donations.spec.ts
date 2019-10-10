@@ -1,9 +1,10 @@
+import 'jasmine';
+
 import supertest from 'supertest';
-
-import app from '../src/server';
-
-import { OK } from 'http-status-codes';
 import { Response, SuperTest, Test } from 'supertest';
+import { OK } from 'http-status-codes';
+
+import app from '@app';
 
 describe('Donation Routes', () => {
 
