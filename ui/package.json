@@ -2,7 +2,7 @@
   "name": "free-online-scrum-master-ui",
   "version": "0.0.0",
   "scripts": {
-    "start-dev": "ng serve",
+    "start:dev": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "test-once": "ng test --watch=false",

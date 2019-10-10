@@ -7,7 +7,8 @@
     "test": "npm run --prefix ui test-once && npm run --prefix api test-once",
     "build": "npm run --prefix api build && npm run --prefix ui build",
     "start": "npm run --prefix api start",
-    "start-dev": "npm run --prefix ui start-dev & npm run --prefix api start-dev"
+    "start-ui:dev": "npm run --prefix ui start:dev",
+    "start-api:dev": "npm run --prefix api start:dev"
   },
   "repository": {
     "type": "git",
