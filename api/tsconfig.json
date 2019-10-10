@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
@@ -14,13 +14,13 @@
     "moduleResolution": "node",
     "paths": {
       "@app": [
-        "src/app"
+        "./app"
       ],
       "@routes": [
-        "src/routes"
+        "./routes"
       ],
       "@shared": [
-        "src/shared"
+        "./shared"
       ]
     },
     "types": [
