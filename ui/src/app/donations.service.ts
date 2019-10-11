@@ -7,9 +7,7 @@ import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class DonationsService {
-  constructor(
-    private http: HttpClient,
-  ) { }
+  constructor(private http: HttpClient) {}
 
   public getDonations(): Observable<number> {
     return this.http.get<number>(environment.apiUrl + '/donations');

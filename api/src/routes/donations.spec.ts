@@ -2,44 +2,62 @@ import 'jasmine';
 
 import supertest from 'supertest';
 import { Response, SuperTest, Test } from 'supertest';
-import { OK } from 'http-status-codes';
 
 import app from '@app';
 
 describe('Donation Routes', () => {
+  const donationsPath = '/api/donations';
 
-    const donationsPath = '/api/donations';
+  let agent: SuperTest<Test>;
 
-    let agent: SuperTest<Test>;
+  const postDonation = (): supertest.Test => {
+    return agent
+      .post(donationsPath)
+      .type('form')
+      .send({});
+  };
 
-    beforeAll((done) => {
-        agent = supertest.agent(app);
-        done();
+  const getDonatations = (): supertest.Test => {
+    return agent.get(donationsPath);
+  };
+
+  beforeAll((done) => {
+    agent = supertest.agent(app);
+    done();
+  });
+
+  describe(`GET:${donationsPath}`, () => {
+    it(`should get donations`, async (done) => {
+      const res: Response = await getDonatations()
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(typeof res.body === 'number').toBeTruthy();
+      done();
+    });
+  });
+
+  describe(`POST:${donationsPath}`, () => {
+    it(`should post a donation`, async (done) => {
+      const res: Response = await postDonation()
+        .expect('Content-Type', /json/)
+        .expect(200);
+
+      expect(typeof res.body === 'number').toBeTruthy();
+      done();
     });
 
-    describe(`GET:${donationsPath}`, () => {
+    it(`should add to the number of donations`, async (done) => {
+      let res: Response = await getDonatations();
+      const originalDonations: number = res.body;
 
-        it(`should return the number of donations`, (done) => {
-            agent.get(donationsPath)
-                .end((err: Error, res: Response) => {
-                    expect(err).toBeFalsy();
-                    expect(res.status).toBe(OK);
-                    expect(typeof res.body === 'number').toBeTruthy();
-                    done();
-                });
-        });
+      await postDonation();
+
+      res = await getDonatations();
+      const finalDonations: number = res.body;
+
+      expect(finalDonations).toEqual(originalDonations + 1);
+      done();
     });
-
-    describe(`POST:${donationsPath}`, () => {
-
-        it(`should add to the number of donations`, (done) => {
-            agent.post(donationsPath).type('form').send({})
-                .end((err: Error, res: Response) => {
-                    expect(err).toBeFalsy();
-                    expect(res.status).toBe(OK);
-                    expect(typeof res.body === 'number').toBeTruthy();
-                    done();
-                });
-        });
-    });
+  });
 });

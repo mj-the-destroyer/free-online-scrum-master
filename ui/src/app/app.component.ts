@@ -13,9 +13,7 @@ import { DonationsService } from './donations.service';
 export class AppComponent {
   public donations$: Observable<number> = this.donationsService.getDonations();
 
-  constructor(
-    private donationsService: DonationsService,
-  ) { }
+  constructor(private donationsService: DonationsService) {}
 
   public onDonatePressed() {
     this.donations$ = this.donationsService.donate();
