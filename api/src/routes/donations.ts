@@ -20,7 +20,7 @@ router.get('/', async (req: Request, res: Response) => {
  ******************************************************************************/
 
 router.post('/', async (req: Request, res: Response) => {
-  donations++;
+  donations += 1;
   return res.status(OK).json(donations);
 });
 
