@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [];
 
 @NgModule({
-  imports: [RouterMoasefdule.forRoot(routes)],
+  imports: [RouterMdsfgfodule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
