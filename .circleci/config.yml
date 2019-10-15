@@ -6,11 +6,18 @@ jobs:
 
     steps:
       - checkout
+      - run: npm run build
+  lint:
+    docker:
+      - image: debian:stretch
 
-      - run:
-          name: Greeting
-          command: echo Hello, world.
+    steps:
+      - checkout
+      - run: npm run lintall
+  test:
+    docker:
+      - image: debian:stretch
 
-      - run:
-          name: Print the Current Time
-          command: date
+    steps:
+      - checkout
+      - run: npm run test
