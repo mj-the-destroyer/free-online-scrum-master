@@ -5,7 +5,7 @@ import { OK } from 'http-status-codes';
 const router = Router();
 
 // State
-let donations = 0;
+let donations = 1;
 
 /******************************************************************************
  *                      Get Donations - "GET /api/donations"
