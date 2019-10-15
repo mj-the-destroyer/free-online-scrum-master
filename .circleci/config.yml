@@ -2,7 +2,7 @@ version: 2
 
 defaults: &defaults
   docker:
-    - image: circleci/node:8.9.1
+    - image: circleci/node:jessie-browsers
 
 jobs:
   build:
@@ -11,13 +11,5 @@ jobs:
       - checkout
       - run: npm i
       - run: npm run build
-  lint:
-    <<: *defaults 
-    steps:
-      - checkout
       - run: npm run lintall
-  test:
-    <<: *defaults 
-    steps:
-      - checkout
       - run: npm run test
