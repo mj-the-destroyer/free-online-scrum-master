@@ -1,8 +1,8 @@
-version: 0
+version: 2
 jobs:
   build:
     docker:
-      - image: mac:stretch
+      - image: debian:stretch
 
     steps:
       - checkout
