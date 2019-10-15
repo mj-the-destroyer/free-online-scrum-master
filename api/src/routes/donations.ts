@@ -5,7 +5,7 @@ import { OK } from 'http-status-codes';
 const router = Router();
 
 // State
-let donations = 1;
+let donations = 0;
 
 /******************************************************************************
  *                      Get Donations - "GET /api/donations"
@@ -20,7 +20,7 @@ router.get('/', async (req: Request, res: Response) => {
  ******************************************************************************/
 
 router.post('/', async (req: Request, res: Response) => {
-  donations++;
+  donations += 2;
   return res.status(OK).json(donations);
 });
 
